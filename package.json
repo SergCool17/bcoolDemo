@@ -37,12 +37,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SergCool17/bcoolDemo.git"
+    "url": "zzzz"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SergCool17/bcoolDemo/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/SergCool17/bcoolDemo#readme"
+  "homepage": "."
 }

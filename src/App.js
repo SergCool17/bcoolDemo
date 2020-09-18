@@ -14,17 +14,17 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 const App = (props) => {
   return (
-    <div className='app-wrapper'>
-      <Header />
-      <Navbar />
-      <Sidebar />
-      <div className='app-wrapper-content'>
-        <Route  path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
-        <Route path='/profile'  render={ () => <Profile
-                               profilePage={props.state.profilePage}
-                               addPost={props.addPost}
-                               updateNewPostText={props.updateNewPostText}
-                           /> }/>
+          <div className='app-wrapper'>
+              <Header />
+              <Navbar />
+              <Sidebar />
+              <div className='app-wrapper-content'>
+                  <Route path='/dialogs'
+                         render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
+                  <Route path='/profile'
+                         render={ () => <Profile
+                             profilePage={props.state.profilePage}
+                             dispatch={props.dispatch} /> }/>
         <Route  path='/news' component={News} />
         <Route  path='/music' component={Music} />
         <Route exact path='/settings' component={Settings} />
