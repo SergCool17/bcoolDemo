@@ -8,7 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Sidebar from './components/Sidebar/Sidebar';
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 
 
@@ -20,7 +20,7 @@ const App = (props) => {
               <Sidebar />
               <div className='app-wrapper-content'>
                   <Route path='/dialogs'
-                         render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
+                         render={ () => <Dialogs store={props.store} /> }/>
                   <Route path='/profile'
                          render={ () => <Profile
                              profilePage={props.state.profilePage}
