@@ -2,12 +2,6 @@ import { dialogsReducer } from './dialogs-Reducer'
 import { profileReducer } from './profile-Reducer'
 import { sidebarReducer } from './sidebar-Reducer'
 
-
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE'
-
 let store = {
     _state: {
         profilePage: {
@@ -37,7 +31,15 @@ let store = {
             ],
             newMessageBody: ""
         },
-        sidebar: {}
+        sidebar: {
+            popularPosts: [
+                { id: 1, title: 'How to make house', viewesCount: 1222 },
+                { id: 2, title: 'First place in battle', viewesCount: 1121 },
+                { id: 3, title: 'Top 10 notebooks', viewesCount: 1111 },
+                { id: 4, title: 'Best service for voicecoding', viewesCount: 1331 }
+            ],
+            newComment: ""
+        }
     },
     getState() {
         return this._state;
@@ -50,8 +52,10 @@ let store = {
         this._callSubscriber = observer;  // observer
     },
     dispatch(action) {
-        this._state.dialogsPage = dialogsReducer (this._state.dialogsPage, action);
-        this._state.profilePage = profileReducer (this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
 
 
         this._callSubscriber(this._state);
